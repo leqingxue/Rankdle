@@ -1,1 +1,186 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.centered{
+	margin-left: auto; 
+	margin-right: auto;
+}
+.centered-text{
+	margin-left: auto; 
+	margin-right: auto;
+	width: fit-content;
+}
+.score-container{
+	height: 3vw;
+	margin: auto;
+	max-height: 40px;
+	max-width: 1700px;
+	min-height: 20px;
+	width: fit-content; 
+	margin-top: 20px; 
+	margin-bottom: 20px;
+}
+.score-star{
+	color: gold; 
+	height: 100%;
+	margin: 0 clamp(10px,4vw,20px);
+	width: auto; 
+}
+.val-ranks{
+	width: fit-content;
+	margin: auto; 
+	transform: translateX(3.5em);
+}
+.rank-div{
+	display: inline-block;
+	cursor: pointer;
+	height: 5em; 
+	width: 5em;
+	transition: all .3s; 
+}
+.rank-image{
+	width:95%;
+	max-width: 256px;
+}
+.selected-rank{
+	background: radial-gradient(circle,#af9d67 10%,#af9d67 0,hsla(0,0%,100%,0) 75%);
+	height: 7em !important;
+	width: 7em !important;
+}
+.submit-rank{
+	align-content: center;
+    align-items: center;
+    background-color: #455A64;
+    border: 1px solid #9E9E9E;
+    border-radius: min(1vw, .5rem);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    font-family: Freeroad;
+    font-size: clamp(.6rem,3vw,1.6rem);
+    font-weight: 400;
+    height: clamp(25px,7vw,50px);
+    justify-content: center;
+    margin: initial;
+    outline: none;
+    width: clamp(75px,18vw,180px);
+	cursor: pointer;
+}
+.submit-rank:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 20px 1px #FFFFFF;
+}
+.button-holder{
+	width:fit-content;
+	margin:auto;
+}
+.results-menu{
+	height: max(400px, 20vw);
+	width: max(400px, 20vw);
+	background-color: #212121; 
+	position:absolute;
+	top: 10vw; 
+	left: 40vw;
+	box-shadow: 0 0 16px 3px #FFFFFF;
+}
+.alignleft {
+	float: left;
+	margin-left: max(5vw, 50px); 
+}
+.alignright {
+	float: right;
+	margin-right: max(5vw, 50px);
+}
+body{
+	background-color: #212121;
+}
+</style>
+</head>
+<body>
+<div id="title">
+	<H1 class="centered-text" style="color:white;">RANKDLE</H1>
+</div>
+<div id="score" class="score-container">
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+</div>
+<div id="video">
+	<div id="video-wrapper" style="width:73.375em; height:41.25em;" class="centered">
+		<iframe id="video-video" class="centered" style="width:73.375em; height:41.25em;" src="https://www.youtube.com/embed/-oEl5ItH3lI" title="Can you guess the rank? Valorant Rankdle #101.2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	</div>
+</div>
+<div>
+	<H1 id="clip_number" class="centered-text" style="color:white;">Clip 1</H1>
+</div>
+<div class="ranks val-ranks">
+	<div id="iron-select" class="rank-div"><img src="images/Iron.png" class="rank-image"></div>
+	<div id="bronze-select" class="rank-div"><img src="images/Bronze.png" class="rank-image"></div>
+	<div id="silver-select" class="rank-div"><img src="images/Silver.png" class="rank-image"></div>
+	<div id="gold-select" class="rank-div"><img src="images/Gold.png" class="rank-image"></div>
+	<div id="platinum-select" class="rank-div"><img src="images/Platinum.png" class="rank-image"></div>
+	<div id="diamond-select" class="rank-div"><img src="images/Diamond.png" class="rank-image"></div>
+	<div id="ascendant-select" class="rank-div"><img src="images/Ascendant.png" class="rank-image"></div>
+	<div id="immortal-select" class="rank-div"><img src="images/Immortal.png" class="rank-image"></div>
+	<div id="radiant-select" class="rank-div"><img src="images/Radiant.png" class="rank-image"></div>
+	<div id="empty-select" class="rank-div" style="height:7em; width:7em; cursor: auto;"><img src="images/Empty.png" class="rank-image"></div>
+</div>
+<br>
+<br>
+<div>
+	<div id="buttons-holder" class="button-holder">
+		<button id="prev_button" type="button" class="submit-rank" onclick="previous()" style="display:none;">Prev Clip</button>
+		<button id="sub_button" type="button" class="submit-rank" onclick="submit()" style="display:inline-block;">Submit</button>
+		<button id="clip_result_button" type="button" class="submit-rank" onclick="show_clip_result()" style="display:none;">Clip Result</button>
+		<button id="next_button" type="button" class="submit-rank" onclick="next()" style="display:none;">Next Clip</button>
+		<button id="final_button" type="button" class="submit-rank" onclick="openFinal()" style="display:none;">View Results</button>		
+	</div>
+</div>
+<div id="results_menu" class="results-menu" style="display:none;">
+	<H1 style="color:white; text-align: center;">Clip Result</H1>
+	<div>
+		<p class="alignleft" style="color:white; text-align:left;">Correct Rank</p>
+		<p class="alignright" style="color:white; text-align:right;">Your Guess</p>
+	</div>
+	<div style="clear: both;"></div>
+	<div>
+		<div id="correct-select" class="rank-div alignleft"><img id="correct-select-img" src="images/Iron.png" class="rank-image"></div>
+		<div id="your-guess-select" class="rank-div alignright"><img id="your-guess-select-img" src="images/Bronze.png" class="rank-image"></div>
+	</div>
+	<div style="clear: both;"></div>
+	<p style="color:white; text-align:center;">Stars Earned</p>
+	<div id="stars_earned" class="score-container">
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+	<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>
+	</div>
+	<button id="next_clip_button" type="button" class="submit-rank" style="margin:auto;" onclick="nextClip()">Next Clip</button>
+	<button id="close_button" type="button" class="submit-rank" style="margin:auto; display:none;" onclick="exit()">Close</button>
+	<p id="tracker" style="color:white; text-align:center;">Tracker:</p>
+</div>
+<div id="final_results_menu" class="results-menu" style="display:none;">
+	<H1 style="color:white; text-align: center;">Rankdle History Stats</H1>
+	<p id="star_history" style="color:white;margin-left:20px">1 stars: 
+	<br> 2 stars:
+	<br> 3 stars:
+	<br> 4 stars:
+	<br> 5 stars:
+	<br> 6 stars:
+	</p>
+	<button id="close_button_2" type="button" class="submit-rank" style="margin:auto; display:block;" onclick="exit2()">Close</button>
+	<div>
+        <div id="countdown" style="transform:translateX(45%); margin-top:20px;">
+            <span id="hours" style="color:white;">00:</span>
+            <span id="minutes" style="color:white;">00:</span>
+            <span id="seconds" style="color:white;">00</span>
+        </div>
+    </div>
+</div>
+<button onclick="panic()" style="position:absolute;top:20px; left:20px;">IF BROKEN CLICK THIS</button>
+<br>
+<br>
+  </html>
