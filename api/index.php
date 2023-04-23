@@ -124,16 +124,16 @@ body{
 	<H1 id="clip_number" class="centered-text" style="color:white;">Clip 1</H1>
 </div>
 <div class="ranks val-ranks">
-	<div id="iron-select" class="rank-div"><img src="api/images/Iron.png" class="rank-image"></div>
-	<div id="bronze-select" class="rank-div"><img src="images/Bronze.png" class="rank-image"></div>
-	<div id="silver-select" class="rank-div"><img src="images/Silver.png" class="rank-image"></div>
-	<div id="gold-select" class="rank-div"><img src="images/Gold.png" class="rank-image"></div>
-	<div id="platinum-select" class="rank-div"><img src="images/Platinum.png" class="rank-image"></div>
-	<div id="diamond-select" class="rank-div"><img src="images/Diamond.png" class="rank-image"></div>
-	<div id="ascendant-select" class="rank-div"><img src="images/Ascendant.png" class="rank-image"></div>
-	<div id="immortal-select" class="rank-div"><img src="images/Immortal.png" class="rank-image"></div>
-	<div id="radiant-select" class="rank-div"><img src="images/Radiant.png" class="rank-image"></div>
-	<div id="empty-select" class="rank-div" style="height:7em; width:7em; cursor: auto;"><img src="images/Empty.png" class="rank-image"></div>
+	<div id="iron-select" class="rank-div"><img src="static/images/Iron.png" class="rank-image"></div>
+	<div id="bronze-select" class="rank-div"><img src="static/images/Bronze.png" class="rank-image"></div>
+	<div id="silver-select" class="rank-div"><img src="static/images/Silver.png" class="rank-image"></div>
+	<div id="gold-select" class="rank-div"><img src="static/images/Gold.png" class="rank-image"></div>
+	<div id="platinum-select" class="rank-div"><img src="static/images/Platinum.png" class="rank-image"></div>
+	<div id="diamond-select" class="rank-div"><img src="static/images/Diamond.png" class="rank-image"></div>
+	<div id="ascendant-select" class="rank-div"><img src="static/images/Ascendant.png" class="rank-image"></div>
+	<div id="immortal-select" class="rank-div"><img src="static/images/Immortal.png" class="rank-image"></div>
+	<div id="radiant-select" class="rank-div"><img src="static/images/Radiant.png" class="rank-image"></div>
+	<div id="empty-select" class="rank-div" style="height:7em; width:7em; cursor: auto;"><img src="static/images/Empty.png" class="rank-image"></div>
 </div>
 <br>
 <br>
@@ -194,7 +194,7 @@ var daily_code = "banana";
 var previous_guess = [9,9,9];
 var filled_star = '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path></svg>';
 var empty_star = '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="score-star" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg>';
-var ranks_array = ["images/Iron.png","images/Bronze.png","images/Silver.png","images/Gold.png","images/Platinum.png","images/Diamond.png","images/Ascendant.png","images/Immortal.png","images/Radiant.png"];
+var ranks_array = ["static/images/Iron.png","static/images/Bronze.png","static/images/Silver.png","static/images/Gold.png","static/images/Platinum.png","static/images/Diamond.png","static/images/Ascendant.png","static/images/Immortal.png","static/images/Radiant.png"];
 //val ranks handle
 var videos = ["https://www.youtube.com/embed/-oEl5ItH3lI","https://www.youtube.com/embed/UIwhQ6PC2sc","https://www.youtube.com/embed/Uv3iNQ9dTSs"];
 var solution = [4,5,6];
