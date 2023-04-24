@@ -124,7 +124,7 @@ body{
 	<H1 id="clip_number" class="centered-text" style="color:white;">Clip 1</H1>
 </div>
 <div class="ranks val-ranks">
-	<div id="iron-select" class="rank-div"><img src="\~/src/static/images/Iron.png" class="rank-image"></div>
+	<div id="iron-select" class="rank-div"><img src="static/Iron.png" class="rank-image"></div>
 	<div id="bronze-select" class="rank-div"><img src="src/static/images/Bronze.png" class="rank-image"></div>
 	<div id="silver-select" class="rank-div"><img src="src/static/images/Silver.png" class="rank-image"></div>
 	<div id="gold-select" class="rank-div"><img src="src/static/images/Gold.png" class="rank-image"></div>
